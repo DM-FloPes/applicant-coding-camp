@@ -2,6 +2,7 @@ package dm.applicantcodingcamp.bikerental.console;
 
 import dm.applicantcodingcamp.bikerental.model.Bike;
 import dm.applicantcodingcamp.bikerental.storage.MemoryStorage;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -9,16 +10,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-import static java.lang.System.*;
+import static java.lang.System.exit;
+import static java.lang.System.out;
 
 @Component
+@RequiredArgsConstructor
 public class ConsoleRunner implements CommandLineRunner {
 
     private final MemoryStorage memoryStorage;
-
-    public ConsoleRunner(MemoryStorage memoryStorage) {
-        this.memoryStorage = memoryStorage;
-    }
 
     @Override
     public void run(String... args) throws Exception {
@@ -47,7 +46,7 @@ public class ConsoleRunner implements CommandLineRunner {
         out.println("0: Return");
         for (int idx = 0; idx < memoryStorage.getBikes().size(); idx++) {
             Bike bike = bikes.get(idx);
-            if (bike.rented) {
+            if (bike.getRented()) {
                 out.println((idx + 1) + ": " + bikes.get(idx));
             }
         }
@@ -63,7 +62,7 @@ public class ConsoleRunner implements CommandLineRunner {
                 continue;
             }
             Bike bike = bikes.get(option);
-            bike.rented = false;
+            bike.setRented(false);
             out.println("Returned bike: " + bike);
             break;
         }
@@ -88,7 +87,7 @@ public class ConsoleRunner implements CommandLineRunner {
                 continue;
             }
             Bike bike = bikes.get(option);
-            bike.rented = true;
+            bike.setRented(true);
             out.println("Rented bike: " + bike);
             break;
         }

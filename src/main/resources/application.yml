@@ -8,3 +8,15 @@ bikerental:
       rimSize: 22
       frameSize: 10
       color: Deep Green
+    - manufacturer: Bracken
+      rimSize: 24
+      frameSize: 54
+      color: White
+    - manufacturer: St Micheal
+      rimSize: 13
+      frameSize: 43
+      color: Satin Matte Purple
+    - manufacturer: Longe
+      rimSize: 26
+      frameSize: 20
+      color: Mauve

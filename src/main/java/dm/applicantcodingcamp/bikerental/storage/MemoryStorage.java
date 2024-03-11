@@ -13,9 +13,13 @@ public class MemoryStorage {
 
     private static final MemoryStorage instance = new MemoryStorage();
 
+    public MemoryStorage() {
+        bikes = new HashSet<>();
+    }
+
     @Setter
     @Getter
-    private Collection<Bike> bikes = new HashSet<>();
+    private Collection<Bike> bikes;
 
     public static MemoryStorage get() {
         return instance;

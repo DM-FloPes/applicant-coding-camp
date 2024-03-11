@@ -1,22 +1,18 @@
-package dm.applicantcodingcamp.bikerental.model;
+package dm.applicantcodingcamp.bikerental.model
 
-import lombok.AllArgsConstructor;
-
-@AllArgsConstructor
-public class Bike {
-    public String manufacturer;
-    public int rimSize;
-    public int frameSize;
-    public String color;
-    public boolean rented;
-
-    @Override
-    public String toString() {
+data class Bike(
+    var manufacturer: String? = null,
+    var rimSize: Int = 0,
+    var frameSize: Int = 0,
+    var color: String? = null,
+    var rented: Boolean = false,
+) {
+    override fun toString(): String {
         return "Bike{" + manufacturer +
-                ", rimSize=" + rimSize +
-                ", frameSize=" + frameSize +
-                ", color='" + color + '\'' +
-                ", rented=" + rented +
-                '}';
+            ", rimSize=" + rimSize +
+            ", frameSize=" + frameSize +
+            ", color=" + color +
+            ", rented=" + rented +
+            '}'
     }
 }
