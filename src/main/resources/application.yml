@@ -1,0 +1,10 @@
+bikerental:
+  bikes:
+    - manufacturer: Sprook
+      rimSize: 14
+      frameSize: 50
+      color: Black
+    - manufacturer: Klayster
+      rimSize: 22
+      frameSize: 10
+      color: Deep Green
